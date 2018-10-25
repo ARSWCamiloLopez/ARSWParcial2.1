@@ -13,12 +13,15 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import org.joda.time.DateTime;
+import org.joda.time.LocalDateTime;
 import org.springframework.stereotype.Service;
 
 /**
@@ -27,19 +30,38 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class InMemoryParcialPersistence implements ParcialPersistence {
-    
-    private Map<String, Date> keyMap = new HashMap<>();
-    private List<Map> listKey = new ArrayList<>();
-    private Map<List, String> cache = new HashMap<>();
-    
+
+    private Map<String, LocalDateTime> cacheTimes = new HashMap<>();
+    private Map<String, String> cache = new HashMap<>();
+
     @Override
     public String getWeatherByCityName(String cityName) throws MalformedURLException, ProtocolException, IOException {
-        String Url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName
-                + "&appid=d6a8f9e598220b8c50c9f2ad6f670a0e";
-        return getHttpRequest(Url);
+
+        LocalDateTime now = LocalDateTime.now();
+        cacheTimes.put(cityName, now);
+
+        return validateCache(cityName);
     }
 
-    public String getHttpRequest(String GET_URL) throws MalformedURLException, ProtocolException, IOException {
+    private String validateCache(String cityName) throws ProtocolException, IOException, IOException {
+        String toReturn = "";
+        for (String x : cacheTimes.keySet()) {
+            if (x.equals(cityName)) {
+                LocalDateTime now = LocalDateTime.now();
+                if (cacheTimes.get(x).isBefore(now)) {
+                    toReturn = cache.get(x);
+                }
+            } else {
+                String Url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName
+                        + "&appid=d6a8f9e598220b8c50c9f2ad6f670a0e";
+                cache.put(cityName, getHttpRequest(Url));
+                toReturn = getHttpRequest(Url);
+            }
+        }
+        return toReturn;
+    }
+
+    private String getHttpRequest(String GET_URL) throws MalformedURLException, ProtocolException, IOException {
 
         String USER_AGENT = "Mozilla/5.0";
 
