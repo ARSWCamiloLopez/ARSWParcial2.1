@@ -9,6 +9,8 @@ function getWeatherByCityName() {
     axios.get('weather/' + document.getElementById("mainInput").value)
             .then(function (response) {
 
+                document.getElementById("tableDiv").innerHTML = "";
+
                 var weatherTable = document.createElement("table");
                 weatherTable.setAttribute("class", "table");
                 weatherTable.style.width = "50%";
