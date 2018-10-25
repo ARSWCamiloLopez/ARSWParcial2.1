@@ -13,6 +13,12 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import org.springframework.stereotype.Service;
 
 /**
@@ -21,7 +27,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class InMemoryParcialPersistence implements ParcialPersistence {
-
+    
+    private Map<String, Date> keyMap = new HashMap<>();
+    private List<Map> listKey = new ArrayList<>();
+    private Map<List, String> cache = new HashMap<>();
+    
     @Override
     public String getWeatherByCityName(String cityName) throws MalformedURLException, ProtocolException, IOException {
         String Url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName

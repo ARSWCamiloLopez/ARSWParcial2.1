@@ -25,7 +25,7 @@ public class ParcialAPIController {
 
     @Autowired
     ParcialServices pServices;
-    
+
     /**
      *
      * @param cityName
