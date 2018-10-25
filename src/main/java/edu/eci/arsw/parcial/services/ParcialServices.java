@@ -5,10 +5,21 @@
  */
 package edu.eci.arsw.parcial.services;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+
 /**
  *
  * @author 2105700
  */
 public interface ParcialServices {
+    
+    /**
+     *
+     * @param cityName
+     * @return
+     */
+    public String getWeatherByCityName(String cityName) throws MalformedURLException, ProtocolException, IOException;
     
 }
