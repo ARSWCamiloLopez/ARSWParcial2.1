@@ -4,7 +4,7 @@ Al abrir la aplicacion en heroku la primera busqueda de temperatura en ciudad qu
 
 [![Heroku link](https://www.herokucdn.com/deploy/button.png)](https://secure-river-96770.herokuapp.com/)
 
-## Corre localmente
+## Correr localmente
 
 Para correr el proyecto localmente, primero hay que asegurarse de que el proyecto esta corriendo en netbeans, o en consola en la carpeta raiz del proyecto con el siguiente comando:
 
