@@ -35,4 +35,5 @@ La aplicacion deberia estar corriendo en [localhost:5000](http://localhost:5000/
 - El cache se implemento de la siguiente manera, no se tuvo en cuenta un cache global, solo por usuario, si se hacia una busqueda a una ciudad dada se añadia el nombre de la ciudad y su respectivo JSon y ademas se agregaba la hora en la que se hacia la busqueda, cuando se veia que el usuario hacia una nueva peticion a la misma ciudad se comparaban las horas en las que se hacian y si la fecha actual era mayor a la anterior se hacia una nueva peticion al api, si no, se retornaba el Json que se habia guardado en el map: 
 ![alt text](https://github.com/ARSWCamiloLopez/ARSWParcial2.1/blob/master/screenshots/Screenshot%20from%202018-10-25%2018-56-41.png)
 
+## Conclusion
 - En conclusion el correcto manejo de las tecnologias que se ofrecen hoy en dia, en este caso heroku, spring, maven, axios y bootstrap se pueden construir aplciaciones amigables para el usuario, y ademas, de una manera organizada y concreta, esto aplicando el patron de MVC. Y con el correcto uso de las API's gratuitas que nos ofrecen se puede obtener y organizar la informacion de una manera adecuada.
