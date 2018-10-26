@@ -1,5 +1,7 @@
 # Parcial 2 corte ARSW
 
+Al abrir el link en heroku la primera busqueda de temperatura en ciudad queda en blanco, pero el Json carga, no se porque es, pero ya al hacer una segunda busqueda y demas ya srive normalmente.
+
 [![Heroku link](https://www.herokucdn.com/deploy/button.png)](https://secure-river-96770.herokuapp.com/)
 
 ## Corre localmente
