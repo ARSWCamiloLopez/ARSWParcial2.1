@@ -17,7 +17,6 @@ La aplicacion deberia estar corriendo en [localhost:5000](http://localhost:5000/
 ## Documentacion arquitectura
 
 - Para este parcial teniamos que utilizar un api el cual con la key correcta de activacion y el link correcto se pueden obtener los datos climaticos dependiendo la ciudad que se quiera buscar, en este caso, tuvimos que implementar mediante Spring, maven y heroku, una aplicacion web la cual permitiera ingresar el nombre de la ciudad la cual se quiere conocer su informacion de clima y mostrarla en pantalla de una manera amigable y entendible hacia el usuario. En este caso, mi desarrollo de la aplicacion fue el siguiente:
-
 ![alt text](https://github.com/ARSWCamiloLopez/ARSWParcial2.1/blob/master/screenshots/Screenshot%20from%202018-10-25%2018-08-39.png)
 
 - Si se quiere saber el clima de una ciudad determinada, se puede ingresar el nombre en el campo que esta habilitado para ingresar texto y dar click en el boton de buscar, cuando esto ocurre se mostrar una tabla con la informacion del clima de esta ciudad como se ve en la siguiente imagen: 
