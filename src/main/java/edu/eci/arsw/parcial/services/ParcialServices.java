@@ -16,9 +16,10 @@ import java.net.ProtocolException;
 public interface ParcialServices {
     
     /**
-     *
-     * @param cityName
-     * @return
+     * Esta clase retorna el String que genera el API al cual se hace el llamado
+     * dependiendo de el nombre de la ciudad
+     * @param cityName Nombre de la ciudad
+     * @return El json que retorna el API
      */
     public String getWeatherByCityName(String cityName) throws MalformedURLException, ProtocolException, IOException;
     
